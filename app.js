@@ -9,12 +9,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.get('/api', (req, res) => {
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.get('/api', (req, res) => {
-  res.sendFile(path.join(__dirname, 'faker.json'));
 });
 
 app.listen(app.get('port'), () => {
