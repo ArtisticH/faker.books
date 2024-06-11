@@ -10,8 +10,13 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
 app.get('/api', (req, res) => {
+  res.sendFile(path.join(__dirname, 'index.html'));
+});
+
+app.get('/api', (req, res) => {
   res.sendFile(path.join(__dirname, 'faker.json'));
-})
+});
+
 app.listen(app.get('port'), () => {
   console.log(`${app.get('port')}번 포트에서 대기 중`);
 });
